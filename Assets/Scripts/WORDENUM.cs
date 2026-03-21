@@ -5,5 +5,6 @@ public enum WORDENUM
     Pumpkin,
     Wand,
     Rat,
-    Weapon
+    Weapon,
+    Onion
 }

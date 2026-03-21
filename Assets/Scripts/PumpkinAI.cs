@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PumpkinRunFromPlayer : MonoBehaviour
+public class PumpkinAI : MonoBehaviour
 {
     public float fleeDistance = 10f; // Distance at which the AI starts fleeing
     public float speed = 5f;
@@ -45,4 +45,12 @@ public class PumpkinRunFromPlayer : MonoBehaviour
             }
         }
     }
+
+    public void Die() 
+    { 
+    
+    
+    }
+
+
 }

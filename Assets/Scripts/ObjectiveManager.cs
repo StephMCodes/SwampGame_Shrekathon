@@ -20,15 +20,14 @@ public class ObjectiveManager : MonoBehaviour
     {
         if (objectiveDict.ContainsKey(objectiveName))
         {
-            Debug.Log($"Setting objective '{objectiveName}' to {value}.");
             objectiveDict[objectiveName] = value;
         }
-        else
-        {
-            Debug.LogWarning($"Objective '{objectiveName}' does not exist in the dictionary.");
+        if (objectiveName == WORDENUM.Onion) 
+        { 
+            incrementOnions();
         }
 
-        UIHandler.updateObjectiveCounters();
+        UIHandler.RefreshUI();
     }
 
     public static bool getObjectiveStatus(WORDENUM objectiveName)

@@ -6,12 +6,13 @@ public class Interactable : MonoBehaviour
 {
     private bool isInRange = false;
     private UIHandler uihandler;
+    protected UIVirtualButton interactButton = Keyboard.current.eKey;
 
 
 
     void Update()
     {
-        if (isInRange && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+        if (isInRange && Keyboard.current != null && interactButton.wasPressedThisFrame)
         {
             Interact();
         }
