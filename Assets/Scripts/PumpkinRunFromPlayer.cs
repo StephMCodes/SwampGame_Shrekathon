@@ -38,6 +38,11 @@ public class PumpkinRunFromPlayer : MonoBehaviour
                     agent.SetDestination(destinationPoint);
                 }
             }
+            else {
+            //If player is not close
+
+
+            }
         }
     }
 }
