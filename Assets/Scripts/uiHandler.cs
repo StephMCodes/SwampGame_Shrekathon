@@ -11,6 +11,8 @@ public class UIHandler : MonoBehaviour
     {
         UIPressE = UIPressEPublic;
         UIPressE.SetActive(false);
+
+        updateObjectiveCounters();
     }
 
     public static void SetUIPressE(bool isActive)
@@ -22,14 +24,18 @@ public class UIHandler : MonoBehaviour
     }
 
     //Update objective counters
-    public void updateObjectiveCounters() {
+    public static void updateObjectiveCounters() {
 
-        if (ObjectiveManager.getObjectiveStatus("Pumpkin")) 
-        {
-         //Add the checkmark to thing
-         //Object
-        }
+        bool pump = ObjectiveManager.getObjectiveStatus(WORDENUM.Pumpkin);
+        bool wand = ObjectiveManager.getObjectiveStatus(WORDENUM.Wand);
+        bool rat = ObjectiveManager.getObjectiveStatus(WORDENUM.Rat);
 
+        Debug.Log("Pumpkin: " + pump + " Wand: " + wand + " Rat: " + rat);
+
+        ObjectiveUIListHandler.setPumkin(pump);
+        ObjectiveUIListHandler.setWand(wand);
+        ObjectiveUIListHandler.setRat(rat);
+        
 
     }
 

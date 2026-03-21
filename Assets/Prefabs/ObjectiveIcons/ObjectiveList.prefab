@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c40b6009e16f38440bfad366f03b7596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  pumpkin: {fileID: 3007811968452610699}
-  rat: {fileID: 2910332361660489488}
-  wand: {fileID: 4137371882885129470}
+  pumpkinPub: {fileID: 3007811968452610699}
+  ratPub: {fileID: 2910332361660489488}
+  wandPub: {fileID: 4137371882885129470}
 --- !u!1001 &7901026148201131104
 PrefabInstance:
   m_ObjectHideFlags: 0

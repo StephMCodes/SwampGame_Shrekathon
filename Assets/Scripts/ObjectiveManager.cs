@@ -5,27 +5,33 @@ using System.Collections.Generic;
 public class ObjectiveManager : MonoBehaviour
 {
     // Tracks Objectives
-    private static Dictionary<string, bool> objectiveDict = new Dictionary<string, bool>
+    private static Dictionary<WORDENUM, bool> objectiveDict = new Dictionary<WORDENUM, bool>
     {
-        { "Pumpkin", false },
-        { "Weapon", false }
+        { WORDENUM.Pumpkin, false },
+        { WORDENUM.Rat, false },
+        { WORDENUM.Wand, false },
+        { WORDENUM.Weapon, false }
     };
 
     private static int OnionCount = 0;
 
-    public static void setObjectiveStatus(string objectiveName, bool value)
+
+    public static void setObjectiveStatus(WORDENUM objectiveName, bool value)
     {
         if (objectiveDict.ContainsKey(objectiveName))
         {
+            Debug.Log($"Setting objective '{objectiveName}' to {value}.");
             objectiveDict[objectiveName] = value;
         }
         else
         {
             Debug.LogWarning($"Objective '{objectiveName}' does not exist in the dictionary.");
         }
+
+        UIHandler.updateObjectiveCounters();
     }
 
-    public static bool getObjectiveStatus(string objectiveName)
+    public static bool getObjectiveStatus(WORDENUM objectiveName)
     {
         if (objectiveDict.TryGetValue(objectiveName, out bool value))
         {

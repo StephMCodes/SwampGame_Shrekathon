@@ -3,15 +3,13 @@ using UnityEngine.UI;
 
 public class ObjectiveUI : MonoBehaviour
 {
-    private Toggle toggle;
-    
-    void Start()
-    {
-        toggle = GetComponent<Toggle>();
-    }
+    public Toggle toggle;
+   
 
     public void setToggle(bool toggleState)
     {
+        Debug.Log("Setting toggle state to: " + toggleState + " for " + gameObject.name);
+        Debug.Log("Toggle component found: " + (toggle != null));
         if (toggle != null)
         {
             toggle.isOn = toggleState;
