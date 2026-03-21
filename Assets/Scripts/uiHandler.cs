@@ -16,7 +16,7 @@ public class UIHandler : MonoBehaviour
 
         axeHandler = axePrefab.GetComponent<AxeHandler>();
 
-        updateObjectiveCounters();
+        RefreshUI();
     }
 
     public static void AxeSwing() 
@@ -54,7 +54,7 @@ public class UIHandler : MonoBehaviour
         ObjectiveUIListHandler.setWand(wand);
         ObjectiveUIListHandler.setRat(rat);
 
-        if (weapon) { DisplayAxe(); }
+        DisplayAxe(weapon);
         
 
     }

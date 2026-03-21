@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9154976669102306550}
   m_Layer: 0
-  m_Name: Axe
+  m_Name: AxeHoldable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

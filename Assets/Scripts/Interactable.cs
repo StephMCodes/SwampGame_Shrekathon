@@ -1,18 +1,16 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 
 public class Interactable : MonoBehaviour
 {
     private bool isInRange = false;
-    private UIHandler uihandler;
-    protected UIVirtualButton interactButton = Keyboard.current.eKey;
-
-
+    protected virtual ButtonControl InteractButton => Keyboard.current.eKey;
 
     void Update()
     {
-        if (isInRange && Keyboard.current != null && interactButton.wasPressedThisFrame)
+        if (isInRange && InteractButton != null && InteractButton.wasPressedThisFrame)
         {
             Interact();
         }
@@ -20,12 +18,10 @@ public class Interactable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Use tags for clear identification
+        if (other.CompareTag("Player"))
         {
             isInRange = true;
             UIHandler.SetUIPressE(true);
-            
-            
         }
     }
 

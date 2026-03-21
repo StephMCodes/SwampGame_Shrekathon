@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class InteractableKill : Interactable
 {
-
+    protected override ButtonControl InteractButton => Mouse.current.leftButton;
     public GameObject targetPumpkin;
     private PumpkinAI pumpkinAI;
 
@@ -11,7 +13,6 @@ public class InteractableKill : Interactable
     {
         pumpkinAI = targetPumpkin.GetComponent<PumpkinAI>();
 
-        interactButton = Keyboard.current.leftMouseButton;
     }
 
 
