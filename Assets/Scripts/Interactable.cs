@@ -7,6 +7,8 @@ public class Interactable : MonoBehaviour
     private bool isInRange = false;
     private UIHandler uihandler;
 
+
+
     void Update()
     {
         if (isInRange && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
@@ -20,7 +22,7 @@ public class Interactable : MonoBehaviour
         if (other.CompareTag("Player")) // Use tags for clear identification
         {
             isInRange = true;
-            uihandler.SetUIPressE(true);
+            UIHandler.SetUIPressE(true);
             
             
         }
@@ -31,7 +33,7 @@ public class Interactable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isInRange = false;
-            uihandler.SetUIPressE(false);
+            UIHandler.SetUIPressE(false);
         }
     }
 
