@@ -47,9 +47,15 @@ public class PumpkinAI : MonoBehaviour
     }
 
     public void Die() 
-    { 
-    
-    
+    {
+
+        Debug.Log("Dieinmgggg");
+
+        //Play death animation and sound effect here
+
+        //Wait a few seconds and activate an InteractableItem (pumpkin corpse) so they can pick him up
+
+
     }
 
 

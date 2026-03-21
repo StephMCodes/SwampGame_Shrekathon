@@ -15,6 +15,7 @@ public class InteractableItem : Interactable
         if (removeAfterInteraction) 
         {
             gameObject.SetActive(false);
+            UIHandler.SetUIPressE(false);
         }
     }
 }
