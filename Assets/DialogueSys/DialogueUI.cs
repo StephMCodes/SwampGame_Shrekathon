@@ -58,7 +58,7 @@ public class DialogueUI : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(inDialogue);
+        //Debug.Log(inDialogue);
 
     }
 
