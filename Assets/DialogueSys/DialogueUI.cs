@@ -70,6 +70,7 @@ public class DialogueUI : MonoBehaviour
         //turn off player
         PlayerObj.gameObject.SetActive(false);
 
+        
         Cursor.lockState = CursorLockMode.None;
 
         IsOpen = true;
