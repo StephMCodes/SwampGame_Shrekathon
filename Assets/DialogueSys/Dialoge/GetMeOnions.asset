@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62944efa3fb7964c8483b1e2182d3e1, type: 3}
+  m_Name: GetMeOnions
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
+  dialogue:
+  - Huh? You want this? I guess one man's trash is another man's treasure...
+  - Well, it's my treasure! You think things are free here?
+  - I don't want your money! Get me three onions and then we can talk.
+  responses: []
