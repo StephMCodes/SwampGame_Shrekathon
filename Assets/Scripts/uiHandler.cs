@@ -6,7 +6,7 @@ public class UIHandler : MonoBehaviour
     public GameObject UIPressEPublic;
     private static GameObject UIPressE;
 
-    public GameObject axePrefab;
+    public GameObject axeHoldablePrefab;
     static private AxeHandler axeHandler;
 
     void Start()
@@ -14,7 +14,7 @@ public class UIHandler : MonoBehaviour
         UIPressE = UIPressEPublic;
         UIPressE.SetActive(false);
 
-        axeHandler = axePrefab.GetComponent<AxeHandler>();
+        axeHandler = axeHoldablePrefab.GetComponent<AxeHandler>();
 
         RefreshUI();
     }

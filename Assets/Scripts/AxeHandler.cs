@@ -1,8 +1,22 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class AxeHandler : MonoBehaviour
 {
     public GameObject model;
+
+    void Update() 
+    {
+
+        if (ObjectiveManager.getObjectiveStatus(WORDENUM.Weapon))
+        {
+            if (Mouse.current.leftButton.wasPressedThisFrame) 
+                Swing();    
+        
+        }
+
+    }
 
     //Set model true for show and false for hide
     public void ShowModel(bool State) {
