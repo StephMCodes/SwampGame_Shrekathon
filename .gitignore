@@ -1,3 +1,8 @@
+Assets/Settings/Mobile_RPAsset.asset
+ProjectSettings/EditorBuildSettings.asset
+ProjectSettings/ShaderGraphSettings.asset
+
+
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
@@ -97,3 +102,6 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+/Assets/Settings/Mobile_RPAsset.asset
+/ProjectSettings/EditorBuildSettings.asset
+/ProjectSettings/ShaderGraphSettings.asset
