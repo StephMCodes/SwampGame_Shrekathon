@@ -1,9 +1,14 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
 
     public static int onionCount = 0;
+    public static bool hasRats = false;
+    public static bool hasWand = false;
+    public static bool hasPumpkin = false;
+
     public static bool gameOver = false;
     [SerializeField] GameObject endingCanvas;
 
@@ -12,6 +17,28 @@ public class GameManager : MonoBehaviour
     {
            Cursor.lockState = CursorLockMode.Locked;
 
+    }
+
+    public void GrantItem(string item)
+    {
+        switch(item) {
+            case "onion":
+                onionCount++;
+                break;
+            case "rats":
+                hasRats = true;
+                Debug.Log("Rats: " + hasRats);
+                break;
+            case "wand":
+                hasWand = true;
+                break;
+            case "pumpkin":
+                hasPumpkin = true;
+                break;
+            default:
+                //nothing
+                break;
+        }
     }
 
     // Update is called once per frame

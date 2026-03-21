@@ -7,6 +7,8 @@ public class DialogueUI : MonoBehaviour
 {
     //Responsible for making the text appear on the dialogue UI.
 
+
+    [SerializeField] private GameObject PlayerObj;
     //Reference to text label.
     //The canvas should reference the text child component of dialogue box (drag and drop into textLabel)
     [SerializeField] private TMP_Text textLabel;
@@ -44,7 +46,7 @@ public class DialogueUI : MonoBehaviour
         CloseDialogueBox(); //clean up
         inDialogue = true;
         //method to make it appear on screen
-        ShowDialogue(testDialogue); //passing dialogue object
+        //ShowDialogue(testDialogue); //passing dialogue object
 
 
         //test 1
@@ -64,6 +66,11 @@ public class DialogueUI : MonoBehaviour
     {
         //show box
         dialogueBox.SetActive(true);
+
+        //turn off player
+        PlayerObj.gameObject.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.None;
 
         IsOpen = true;
 
@@ -120,6 +127,7 @@ public class DialogueUI : MonoBehaviour
             //allow mouse inputs again
             EventSystem.SetActive(true);
             inDialogue = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
     }
@@ -147,6 +155,7 @@ public class DialogueUI : MonoBehaviour
         dialogueBox.SetActive(false);
         IsOpen = false;
         textLabel.text = string.Empty;
+        PlayerObj.SetActive(true);
     }
     
 }
