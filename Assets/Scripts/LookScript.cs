@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class LookScript : MonoBehaviour
 {
@@ -11,9 +12,8 @@ public class LookScript : MonoBehaviour
 
     void Update()
     {
-        rotationX += Input.GetAxis("Mouse X") * lookSpeed;
-        rotationY = Mathf.Clamp(rotationY, -90f, 90f);
-
-        transform.localRotation = Quaternion.Euler(rotationY, rotationX, 0.0f);
+        var target = Camera.main.transform.position;
+        target.y = transform.position.y;
+        transform.LookAt(target);
     }
 }
