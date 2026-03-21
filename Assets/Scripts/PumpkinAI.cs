@@ -7,6 +7,7 @@ public class PumpkinAI : MonoBehaviour
     public float speed = 5f;
     private Transform player;
     private NavMeshAgent agent;
+    private Animator animator;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class PumpkinAI : MonoBehaviour
         {
             agent.speed = speed;
         }
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -25,8 +27,10 @@ public class PumpkinAI : MonoBehaviour
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
             // Check if the player is too close
-            if (distanceToPlayer < fleeDistance)
+            if (distanceToPlayer < fleeDistance && ObjectiveManager.getObjectiveStatus(WORDENUM.Weapon))
             {
+                animator.SetBool("playernear", true);
+
                 // Calculate the direction away from the player
                 Vector3 runDirection = transform.position - player.position;
                 // Normalize the direction and extend it to find a potential destination point
@@ -39,8 +43,8 @@ public class PumpkinAI : MonoBehaviour
                 }
             }
             else {
-            //If player is not close
-
+                //If player is not close
+                animator.SetBool("playernear", false);
 
             }
         }
@@ -52,7 +56,7 @@ public class PumpkinAI : MonoBehaviour
         Debug.Log("Dieinmgggg");
 
         //Play death animation and sound effect here
-
+        animator.SetBool("pumpdead", true);
         //Wait a few seconds and activate an InteractableItem (pumpkin corpse) so they can pick him up
 
 
