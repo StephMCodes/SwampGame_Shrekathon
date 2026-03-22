@@ -7,7 +7,8 @@ public class RPSgame : MonoBehaviour
     private int playerTries = 0;
     public RPShand leftHand;
     public RPShand rightHand;
-    public GameObject parentRoot;
+    public GameObject parentRootref;
+    private static GameObject parentRoot;
 
 
 
@@ -16,7 +17,9 @@ public class RPSgame : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-          //  StartGame();
+            //Free mouse
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -28,10 +31,11 @@ public class RPSgame : MonoBehaviour
     public void Start() 
     { 
         EndGame();
+        parentRoot = parentRootref;
     }
 
     [ContextMenu("Start Game")]
-    public void StartGame() 
+    public static void StartGame() 
     {
         parentRoot.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
@@ -79,10 +83,22 @@ public class RPSgame : MonoBehaviour
                  (playerChoice == WORDENUM.Scissors && computerChoice == WORDENUM.Paper))
         {
             Debug.Log("Player wins!");
+            ObjectiveManager.setObjectiveStatus(WORDENUM.Rat, true);
+
+            //Dialogue Win : There's a first for everything, we'll help you when the time comes, Boss.
+            EndGame();
         }
         else
         {
             Debug.Log("Computer wins!");
+            //Dialogue Loss one : They call me the king for a reason
+            if(playerTries == 0) { }
+
+            //Dialogue Loss two : That's two, we could be here all day
+            if (playerTries == 1) { }
+
+            //Dialogue Lost three plus : Really? I'm not even cheating anymore!
+            if (playerTries >= 2) { }
         }
 
         playerTries++;

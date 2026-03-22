@@ -782,7 +782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f086b3a540910748821606c835fa33f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currentImage: {fileID: 0}
   rockSprite: {fileID: 21300000, guid: efeb287099e200b45be9effb7d8fe1a9, type: 3}
   paperSprite: {fileID: 21300000, guid: 360ca1bbcedb2a5489f4f9a20b1f4a23, type: 3}
   scissorsSprite: {fileID: 21300000, guid: 3160d91044913ab4fa65643fe9106bbf, type: 3}
@@ -837,7 +836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RPSgame
   leftHand: {fileID: 686164119611783163}
   rightHand: {fileID: 9121810100403377334}
-  parentRoot: {fileID: 2439269304813259545}
+  parentRootref: {fileID: 2439269304813259545}
 --- !u!1 &7489424611693121265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,7 +1169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f086b3a540910748821606c835fa33f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currentImage: {fileID: 0}
   rockSprite: {fileID: 21300000, guid: efeb287099e200b45be9effb7d8fe1a9, type: 3}
   paperSprite: {fileID: 21300000, guid: 360ca1bbcedb2a5489f4f9a20b1f4a23, type: 3}
   scissorsSprite: {fileID: 21300000, guid: 3160d91044913ab4fa65643fe9106bbf, type: 3}
