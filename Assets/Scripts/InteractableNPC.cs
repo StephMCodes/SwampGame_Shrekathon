@@ -7,6 +7,21 @@ public class NPC : Interactable
     [SerializeField] private string item;
     [SerializeField] private GameManager gameManager;
     private bool hasSpoken = false;
+    [SerializeField] private Animator anim;
+
+
+    private void Update()
+    {
+        if (DialogueUI.inDialogue == true)
+        {
+            anim.SetBool("x", true);
+        }
+        else
+        {
+            anim.SetBool("x", false);
+
+        }
+    }
 
     public override void Interact()
     {
