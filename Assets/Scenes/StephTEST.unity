@@ -194,7 +194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &99585828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,6 +896,7 @@ MonoBehaviour:
   convo: {fileID: 11400000, guid: a99a4229590b9c04d8445573a0ab1cb5, type: 2}
   item: nothing
   gameManager: {fileID: 1057949972}
+  rps: {fileID: 0}
 --- !u!114 &461805579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1253,6 +1254,7 @@ MonoBehaviour:
   convo: {fileID: 11400000, guid: cc8bf9f06f907e24c8d02e3d294d5c16, type: 2}
   item: rats
   gameManager: {fileID: 1057949972}
+  rps: {fileID: 0}
 --- !u!114 &699976593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1373,6 +1375,7 @@ MonoBehaviour:
   convo: {fileID: 11400000, guid: cc8bf9f06f907e24c8d02e3d294d5c16, type: 2}
   item: rats
   gameManager: {fileID: 1057949972}
+  rps: {fileID: 0}
 --- !u!114 &947725736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1484,6 +1487,7 @@ MonoBehaviour:
   convo: {fileID: 11400000, guid: a99a4229590b9c04d8445573a0ab1cb5, type: 2}
   item: nothing
   gameManager: {fileID: 1057949972}
+  rps: {fileID: 0}
 --- !u!54 &1145006081
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2021,6 +2025,7 @@ MonoBehaviour:
   convo: {fileID: 11400000, guid: cc8bf9f06f907e24c8d02e3d294d5c16, type: 2}
   item: rats
   gameManager: {fileID: 1057949972}
+  rps: {fileID: 0}
 --- !u!114 &1499784095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2103,6 +2108,7 @@ MonoBehaviour:
   convo: {fileID: 11400000, guid: cc8bf9f06f907e24c8d02e3d294d5c16, type: 2}
   item: rats
   gameManager: {fileID: 1057949972}
+  rps: {fileID: 0}
 --- !u!114 &1612254514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2371,6 +2377,7 @@ MonoBehaviour:
   convo: {fileID: 11400000, guid: 749f6653c0ea0be4494d811184bb5513, type: 2}
   item: 
   gameManager: {fileID: 1057949972}
+  rps: {fileID: 0}
 --- !u!1 &2072161772 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8352240148364949691, guid: 6d7d06833f2b9ae40becfceb863a7c6e, type: 3}

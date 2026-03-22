@@ -6,6 +6,7 @@ public class NPC : Interactable
     [SerializeField] private DialogueObject convo;
     [SerializeField] private string item;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private RPSgame rps;
     private bool hasSpoken = false;
     //[SerializeField] private Animator anim;
 
@@ -32,6 +33,11 @@ public class NPC : Interactable
             dialogueSys.ShowDialogue(convo);
             hasSpoken = true;
             gameManager.GrantItem(item);
+        }
+        else
+        {
+            rps.gameObject.SetActive(true);
+            rps.StartGame();
         }
     }
 }
