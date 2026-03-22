@@ -16,19 +16,24 @@ public class RPSgame : MonoBehaviour
     public DialogueObject winning3Dialogue;
     public DialogueObject lossingDialogue;
 
+    public GameObject otherUI1;
+    public GameObject otherUI2;
+    private static GameObject otherUI1Static;
+    private static GameObject otherUI2Static;
+
     public void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Keypad1))
         {
-            //Free mouse
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            PlayRock();
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Keypad2))
         {
-          //  EndGame();
+            PlayPaper();
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            PlayScissors();
         }
     }
 
@@ -36,24 +41,46 @@ public class RPSgame : MonoBehaviour
     {
 
         parentRoot = parentRootref;
-        EndGame();
+        parentRoot.SetActive(false);
+
+        otherUI1Static = otherUI1;
+        otherUI2Static = otherUI2;
+
+
     }
 
     [ContextMenu("Start Game")]
-    public static void StartGame() 
+    public static void StartGame()
     {
+        if (ObjectiveManager.getObjectiveStatus(WORDENUM.Rat)) return;
+
+        Debug.Log("Starting RPS game!");
+
         parentRoot.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        otherUI1Static.SetActive(false);
+        otherUI2Static.SetActive(false);
+
+        // Ensure all buttons under parentRoot are interactable
+        foreach (var button in parentRoot.GetComponentsInChildren<UnityEngine.UI.Button>(true))
+        {
+            button.interactable = true;
+        }
     }
 
     [ContextMenu("End Game")]
     public void EndGame() 
     {
+        Debug.Log("Ending RPS game!");
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         parentRoot.SetActive(false);
+
+        otherUI1Static.SetActive(true);
+        otherUI2Static.SetActive(true);
 
     }
 
@@ -62,7 +89,9 @@ public class RPSgame : MonoBehaviour
     //SO like this is the whole game, but if we want to cheat then...
     private void PlayGame(WORDENUM playerChoice)
     {
-        if (leftHand.GetMidANimation() || rightHand.GetMidANimation()) return;
+
+
+        if (!leftHand.GetMidANimation() || !rightHand.GetMidANimation()) { }
 
         WORDENUM[] choices = { WORDENUM.Rock, WORDENUM.Paper, WORDENUM.Scissors };
         WORDENUM computerChoice = choices[Random.Range(0, choices.Length)];
@@ -102,17 +131,17 @@ public class RPSgame : MonoBehaviour
             Debug.Log("Computer wins!");
             //Dialogue Loss one : They call me the king for a reason
             if(playerTries == 0) {
-                dialogueUI.ShowDialogue(winning1Dialogue);
+      //          dialogueUI.ShowDialogue(winning1Dialogue);
             }
 
             //Dialogue Loss two : That's two, we could be here all day
             if (playerTries == 1) {
-                dialogueUI.ShowDialogue(winning2Dialogue);
+        //        dialogueUI.ShowDialogue(winning2Dialogue);
             }
 
             //Dialogue Lost three plus : Really? I'm not even cheating anymore!
             if (playerTries >= 2) {
-                dialogueUI.ShowDialogue(winning3Dialogue);
+        //        dialogueUI.ShowDialogue(winning3Dialogue);
             }
 
         }

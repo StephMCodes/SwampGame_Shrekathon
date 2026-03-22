@@ -135,7 +135,7 @@ public class DialogueUI : MonoBehaviour
             //allow mouse inputs again
             EventSystem.SetActive(true);
             inDialogue = false;
-            Cursor.lockState = CursorLockMode.Locked;
+           // Cursor.lockState = CursorLockMode.Locked;
         }
 
     }
@@ -165,7 +165,13 @@ public class DialogueUI : MonoBehaviour
         textLabel.text = string.Empty;
         PlayerObj.SetActive(true);
 
-        if (isRat) { RPSgame.StartGame();  }
+        if (isRat) { 
+            RPSgame.StartGame();
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+        }
 
     }
 

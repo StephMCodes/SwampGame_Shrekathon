@@ -13,6 +13,7 @@ public class RPShand : MonoBehaviour
 
     void Start()
     {
+        midAnimation = false;
         // Use GetComponent instead of GetComponentInChildren if the SpriteRenderer is on the same GameObject
         currentImage = GetComponent<Image>();
         if (currentImage == null)
