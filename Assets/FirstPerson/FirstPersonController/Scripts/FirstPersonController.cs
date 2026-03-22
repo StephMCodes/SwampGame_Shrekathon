@@ -109,8 +109,8 @@ namespace StarterAssets
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
 
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+           // Cursor.lockState = CursorLockMode.Locked;
+           // Cursor.visible = false;
 
         }
 

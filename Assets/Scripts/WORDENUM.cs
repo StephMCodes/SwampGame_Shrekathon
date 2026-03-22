@@ -6,5 +6,8 @@ public enum WORDENUM
     Wand,
     Rat,
     Weapon,
-    Onion
+    Onion,
+    Rock,
+    Paper,
+    Scissors,
 }
