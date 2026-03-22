@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RatLoses
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   dialogue:
-  - Aurgh, you got me! Fine, I will give you three of my rat squad.
+  - Aurgh, you got me! Fine, I will lend you three members from my rat squad.
+  - When the time comes... We will be there.
   nametag: Rat King
   responses: []
