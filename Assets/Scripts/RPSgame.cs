@@ -16,12 +16,12 @@ public class RPSgame : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartGame();
+          //  StartGame();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            EndGame();
+          //  EndGame();
         }
     }
 

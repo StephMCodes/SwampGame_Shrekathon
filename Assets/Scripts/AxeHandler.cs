@@ -5,6 +5,13 @@ using UnityEngine.InputSystem.Controls;
 public class AxeHandler : MonoBehaviour
 {
     public GameObject model;
+    private Animator targetAnimator;
+    public string triggerName;
+
+    private void Start()
+    {
+        targetAnimator = model.GetComponent<Animator>();
+    }
 
     void Update() 
     {
@@ -28,11 +35,10 @@ public class AxeHandler : MonoBehaviour
     public void Swing() 
     {
 
-        Debug.Log("Swinging Axe!");
-
         //Play Animation for model
-        
-        
+        targetAnimator.SetTrigger(triggerName);
+
+
         //and sound effect for swinging axe
 
 
