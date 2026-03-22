@@ -41,6 +41,10 @@ public class PumpkinAI : MonoBehaviour
             audio2.volume = 1;
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
+            Debug.Log("Distance to player: " + distanceToPlayer);
+
+            Debug.Log("ObjectiveManager.getObjectiveStatus(WORDENUM.Weapon) to player: " + ObjectiveManager.getObjectiveStatus(WORDENUM.Weapon));
+
             // Check if the player is too close
             if (distanceToPlayer < fleeDistance && ObjectiveManager.getObjectiveStatus(WORDENUM.Weapon))
             {
