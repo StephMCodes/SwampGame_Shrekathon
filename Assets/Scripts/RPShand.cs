@@ -29,8 +29,7 @@ public class RPShand : MonoBehaviour
     public void Play(WORDENUM choice, bool isLeftHand) 
     {
         //Animate hand then switch sprite to the correct one, then animate hand again to show the new sprite
-        StartCoroutine(AnimateHand(isLeftHand));
-        SetSprite(choice);
+        StartCoroutine(AnimateHand(choice, isLeftHand));
 
     }
 
@@ -52,8 +51,9 @@ public class RPShand : MonoBehaviour
 
     }
 
-    public IEnumerator AnimateHand(bool isLeftHand)
+    public IEnumerator AnimateHand(WORDENUM choice, bool isLeftHand)
     {
+        SetMidAnimation(true);
         int direction = isLeftHand ? 1 : -1; // Rotate in opposite directions for left and right hands
 
         Debug.Log("AnimateHand");
@@ -62,7 +62,7 @@ public class RPShand : MonoBehaviour
         float duration = 0.40f; // Duration for each rotation
         for (int i = 0; i < angles.Length; i++)
         {
-            duration += 0.05f; // Increase duration for each subsequent rotation
+            duration -= 0.05f; // Increase duration for each subsequent rotation
 
             float startAngle = transform.eulerAngles.z;
             float endAngle = (direction*angles[i]);
@@ -76,6 +76,13 @@ public class RPShand : MonoBehaviour
             }
             transform.eulerAngles = new Vector3(0, 0, endAngle);
         }
+
+        SetSprite(choice);
+        SetMidAnimation(false);
+
     }
+
+    public void SetMidAnimation(bool state) { midAnimation = state; }
+    public bool GetMidANimation() { return midAnimation;  }
 
 }

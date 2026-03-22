@@ -51,6 +51,8 @@ public class RPSgame : MonoBehaviour
     //SO like this is the whole game, but if we want to cheat then...
     private void PlayGame(WORDENUM playerChoice)
     {
+        if (leftHand.GetMidANimation() || rightHand.GetMidANimation()) return;
+
         WORDENUM[] choices = { WORDENUM.Rock, WORDENUM.Paper, WORDENUM.Scissors };
         WORDENUM computerChoice = choices[Random.Range(0, choices.Length)];
 

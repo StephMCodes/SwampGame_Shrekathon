@@ -1655,13 +1655,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2439269304813259545, guid: 6cf3f0b2b8f1f11479d298290b896d23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7027352307271085938, guid: 6cf3f0b2b8f1f11479d298290b896d23, type: 3}
       propertyPath: m_Name
       value: RPSgame
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7917283870619470491, guid: 6cf3f0b2b8f1f11479d298290b896d23, type: 3}
-    - {fileID: 8444040310206537325, guid: 6cf3f0b2b8f1f11479d298290b896d23, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
