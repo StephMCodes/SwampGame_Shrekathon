@@ -433,6 +433,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3689900440037197386, guid: 1918ef46bf3d3ce45bc4af806a4d9012, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4697593853170823426, guid: 1918ef46bf3d3ce45bc4af806a4d9012, type: 3}
       propertyPath: audio1
       value: 
@@ -445,6 +449,10 @@ PrefabInstance:
       propertyPath: audio3
       value: 
       objectReference: {fileID: 2125724385}
+    - target: {fileID: 4697593853170823426, guid: 1918ef46bf3d3ce45bc4af806a4d9012, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2125724393}
     - target: {fileID: 4880042925597733974, guid: 1918ef46bf3d3ce45bc4af806a4d9012, type: 3}
       propertyPath: Loop
       value: 1
@@ -542,6 +550,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4707835025415140128, guid: 1918ef46bf3d3ce45bc4af806a4d9012, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2125724385}
+    - targetCorrespondingSourceObject: {fileID: 4707835025415140128, guid: 1918ef46bf3d3ce45bc4af806a4d9012, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2125724393}
   m_SourcePrefab: {fileID: 100100000, guid: 1918ef46bf3d3ce45bc4af806a4d9012, type: 3}
 --- !u!1 &163117282 stripped
 GameObject:
@@ -1449,7 +1460,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 179929364691545386, guid: 2f1ab146024fe8446a3cb3d33b694b8c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 514662630}
   m_SourcePrefab: {fileID: 100100000, guid: 2f1ab146024fe8446a3cb3d33b694b8c, type: 3}
 --- !u!1 &394538611 stripped
 GameObject:
@@ -1813,6 +1827,23 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2275850548528659355, guid: 17336337b6721f141a4dc7d831df0e12, type: 3}
+--- !u!1 &514662623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 179929364691545386, guid: 2f1ab146024fe8446a3cb3d33b694b8c, type: 3}
+  m_PrefabInstance: {fileID: 367904361}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &514662630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514662623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f77cf5d8929be74283540a0141b1886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
 --- !u!1 &517432238 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6741692793215712667, guid: 17336337b6721f141a4dc7d831df0e12, type: 3}
@@ -6298,11 +6329,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5126413482072312134, guid: 2f1ab146024fe8446a3cb3d33b694b8c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.04
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 5126413482072312134, guid: 2f1ab146024fe8446a3cb3d33b694b8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -132.42
+      value: -129.03
       objectReference: {fileID: 0}
     - target: {fileID: 5126413482072312134, guid: 2f1ab146024fe8446a3cb3d33b694b8c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8543,6 +8574,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &2125724393
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125724383}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d480c06044f53d4b998ffebcf15faba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2130737623 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2655573560833850164, guid: 17336337b6721f141a4dc7d831df0e12, type: 3}

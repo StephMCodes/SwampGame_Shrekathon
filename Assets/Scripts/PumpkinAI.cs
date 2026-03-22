@@ -20,10 +20,10 @@ public class PumpkinAI : MonoBehaviour
         {
             agent.speed = speed;
         }
-        //animator = GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>();
 
-        audio1.volume = 0.1f;
-        audio2.volume = 0.1f;
+        //audio1.volume = 0.1f;
+        //audio2.volume = 0.1f;
 
     }
 
