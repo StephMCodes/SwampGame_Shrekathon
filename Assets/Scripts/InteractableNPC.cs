@@ -34,10 +34,6 @@ public class NPC : Interactable
             hasSpoken = true;
             gameManager.GrantItem(item);
         }
-        else
-        {
-            rps.gameObject.SetActive(true);
-            rps.StartGame();
-        }
+        
     }
 }

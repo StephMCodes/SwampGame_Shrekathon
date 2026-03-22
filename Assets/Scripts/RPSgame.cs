@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class RPSgame : MonoBehaviour
 {
-    [SerializeField] private GameObject PlayerObj;
 
     private int playerTries = 0;
     public RPShand leftHand;
@@ -28,9 +27,10 @@ public class RPSgame : MonoBehaviour
     }
 
     public void Start() 
-    { 
-        EndGame();
+    {
+
         parentRoot = parentRootref;
+        EndGame();
     }
 
     [ContextMenu("Start Game")]
@@ -39,7 +39,6 @@ public class RPSgame : MonoBehaviour
         parentRoot.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        PlayerObj.gameObject.SetActive(false);
 
     }
 
@@ -49,7 +48,6 @@ public class RPSgame : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         parentRoot.SetActive(false);
-        PlayerObj.gameObject.SetActive(true);
 
     }
 
