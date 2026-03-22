@@ -9,11 +9,16 @@ public class PumpkinAI : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField] private Animator animator;
 
+    public GameObject shovel;
+    public InteractableItem corpseModeScript;
+    private bool isDead = false;
+
     [SerializeField] AudioSource audio1;
     [SerializeField] AudioSource audio2;
     [SerializeField] AudioSource audio3;
     void Start()
     {
+        shovel.isActive(false);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         if (agent != null)
@@ -22,14 +27,11 @@ public class PumpkinAI : MonoBehaviour
         }
         animator = GetComponentInChildren<Animator>();
 
-        //audio1.volume = 0.1f;
-        //audio2.volume = 0.1f;
-
     }
 
     void Update()
     {
-        if (player != null)
+        if (player != null && isDead == false)
         {
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
@@ -66,7 +68,7 @@ public class PumpkinAI : MonoBehaviour
 
         animator.SetBool("pumpdead", true);
         //Wait a few seconds and activate an InteractableItem (pumpkin corpse) so they can pick him up
-
+        shovel.isActive(true);
 
     }
 

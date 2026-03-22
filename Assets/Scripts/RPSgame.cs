@@ -56,6 +56,15 @@ public class RPSgame : MonoBehaviour
         WORDENUM[] choices = { WORDENUM.Rock, WORDENUM.Paper, WORDENUM.Scissors };
         WORDENUM computerChoice = choices[Random.Range(0, choices.Length)];
 
+
+        //Cheat for the first two
+        if(playerTries < 2)
+        {
+            if (playerChoice == WORDENUM.Rock) computerChoice = WORDENUM.Scissors;
+            else if (playerChoice == WORDENUM.Paper) computerChoice = WORDENUM.Rock;
+            else if (playerChoice == WORDENUM.Scissors) computerChoice = WORDENUM.Paper;
+        }
+
         leftHand.Play(playerChoice, true);
         rightHand.Play(computerChoice, false);
 
