@@ -3,14 +3,13 @@ using UnityEngine;
 
 public class RPSgame : MonoBehaviour
 {
+    [SerializeField] private GameObject PlayerObj;
 
     private int playerTries = 0;
     public RPShand leftHand;
     public RPShand rightHand;
     public GameObject parentRootref;
     private static GameObject parentRoot;
-
-
 
     public void Update()
     {
@@ -40,6 +39,8 @@ public class RPSgame : MonoBehaviour
         parentRoot.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        PlayerObj.gameObject.SetActive(false);
+
     }
 
     [ContextMenu("End Game")]
@@ -48,6 +49,8 @@ public class RPSgame : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         parentRoot.SetActive(false);
+        PlayerObj.gameObject.SetActive(true);
+
     }
 
 
@@ -60,13 +63,14 @@ public class RPSgame : MonoBehaviour
         WORDENUM[] choices = { WORDENUM.Rock, WORDENUM.Paper, WORDENUM.Scissors };
         WORDENUM computerChoice = choices[Random.Range(0, choices.Length)];
 
+        Debug.Log("?");
 
-        //Cheat for the first two
+        //Cheat for the first two not in favor of player
         if(playerTries < 2)
         {
-            if (playerChoice == WORDENUM.Rock) computerChoice = WORDENUM.Scissors;
-            else if (playerChoice == WORDENUM.Paper) computerChoice = WORDENUM.Rock;
-            else if (playerChoice == WORDENUM.Scissors) computerChoice = WORDENUM.Paper;
+            if (playerChoice == WORDENUM.Rock) computerChoice = WORDENUM.Paper;
+            else if (playerChoice == WORDENUM.Paper) computerChoice = WORDENUM.Scissors;
+            else if (playerChoice == WORDENUM.Scissors) computerChoice = WORDENUM.Rock;
         }
 
         leftHand.Play(playerChoice, true);

@@ -6,19 +6,20 @@ public class NPC : Interactable
     [SerializeField] private DialogueObject convo;
     [SerializeField] private string item;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private RPSgame rps;
     private bool hasSpoken = false;
-    [SerializeField] private Animator anim;
+    //[SerializeField] private Animator anim;
 
 
     private void Update()
     {
         if (DialogueUI.inDialogue == true)
         {
-            anim.SetBool("x", true);
+            //anim.SetBool("x", true);
         }
         else
         {
-            anim.SetBool("x", false);
+            //anim.SetBool("x", false);
 
         }
     }
@@ -32,6 +33,11 @@ public class NPC : Interactable
             dialogueSys.ShowDialogue(convo);
             hasSpoken = true;
             gameManager.GrantItem(item);
+        }
+        else
+        {
+            rps.gameObject.SetActive(true);
+            rps.StartGame();
         }
     }
 }
