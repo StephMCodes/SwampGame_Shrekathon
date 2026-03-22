@@ -6,11 +6,13 @@ public class AxeHandler : MonoBehaviour
 {
     public GameObject model;
     private Animator targetAnimator;
-    public string triggerName;
+    public string triggerName = "swing";
 
     private void Start()
     {
-        targetAnimator = model.GetComponent<Animator>();
+        targetAnimator = this.GetComponent<Animator>();
+        if(targetAnimator == null)
+            targetAnimator = model.GetComponent<Animator>();
     }
 
     void Update() 
@@ -34,6 +36,8 @@ public class AxeHandler : MonoBehaviour
 
     public void Swing() 
     {
+
+        Debug.Log("Swinging Axe, Target Animator exists : " + (targetAnimator !=null));
 
         //Play Animation for model
         targetAnimator.SetTrigger(triggerName);

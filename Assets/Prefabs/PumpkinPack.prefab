@@ -282,14 +282,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2151374658207039279}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.40021592, z: -0, w: 0.91642094}
+  m_LocalPosition: {x: 0.558, y: 0.00999999, z: 0.324}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 554235785843844746}
   m_Father: {fileID: 7278107610546964453}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 47.183, z: 0}
 --- !u!1 &4707835025415140128
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,9 +427,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f0b98c866efd047b64ff7109d7a171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  fleeDistance: 5.75
+  fleeDistance: 8
   speed: 10
   animator: {fileID: 3842448308876771016}
+  shovel: {fileID: 2151374658207039279}
+  corpseModeScript: {fileID: 374911832129209228}
   audio1: {fileID: 1822722155323922445}
   audio2: {fileID: 1827933735374208144}
   audio3: {fileID: 1441339652109024542}

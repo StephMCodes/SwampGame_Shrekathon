@@ -18,7 +18,11 @@ public class PumpkinAI : MonoBehaviour
     [SerializeField] AudioSource audio3;
     void Start()
     {
-        shovel.isActive(false);
+        if (shovel != null)
+            shovel.SetActive(false);
+        if (corpseModeScript != null)
+            corpseModeScript.enabled = false;
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         if (agent != null)
@@ -59,17 +63,20 @@ public class PumpkinAI : MonoBehaviour
         }
     }
 
-    public void Die() 
+    public void Die()
     {
+        isDead = true;
 
-        Debug.Log("Dieinmgggg");
-
-        //Play death animation and sound effect here
-
+        // Play death animation and sound effect here
         animator.SetBool("pumpdead", true);
-        //Wait a few seconds and activate an InteractableItem (pumpkin corpse) so they can pick him up
-        shovel.isActive(true);
 
+        // Show the shovel GameObject
+        if (shovel != null)
+            shovel.SetActive(true);
+
+        // Enable the InteractableItem script (corpse mode)
+        if (corpseModeScript != null)
+            corpseModeScript.enabled = true;
     }
 
 
