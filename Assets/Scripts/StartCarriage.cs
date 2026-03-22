@@ -13,7 +13,7 @@ public class StartCarriage : MonoBehaviour
         {
             animCarriage.SetBool("beatgame", true);
             animAudio.Play();
-            Invoke("QuitGame", 10);
+            Invoke("QuitGame", 15);
         }
     }
 
