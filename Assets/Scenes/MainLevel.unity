@@ -808,6 +808,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2439269304813259545, guid: 6cf3f0b2b8f1f11479d298290b896d23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7027352307271085938, guid: 6cf3f0b2b8f1f11479d298290b896d23, type: 3}
       propertyPath: m_Name
       value: RPSgame
@@ -6973,6 +6977,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3453342497332536568, guid: 995c7cab7206da64a9eff5b9efe649d5, type: 3}
+      propertyPath: m_IsOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453342497332536568, guid: 995c7cab7206da64a9eff5b9efe649d5, type: 3}
+      propertyPath: m_Transition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453342497332536568, guid: 995c7cab7206da64a9eff5b9efe649d5, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453342497332536568, guid: 995c7cab7206da64a9eff5b9efe649d5, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4566047914029143161, guid: 995c7cab7206da64a9eff5b9efe649d5, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -10230,8 +10250,8 @@ SceneRoots:
   - {fileID: 347713583}
   - {fileID: 972195785}
   - {fileID: 249115506}
-  - {fileID: 1396434015}
   - {fileID: 1327492553}
+  - {fileID: 1396434015}
   - {fileID: 151132528}
   - {fileID: 1185712084}
   - {fileID: 629702691}

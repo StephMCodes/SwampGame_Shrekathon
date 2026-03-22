@@ -106,3 +106,7 @@ InitTestScene*.unity*
 /ProjectSettings/EditorBuildSettings.asset
 /ProjectSettings/ShaderGraphSettings.asset
 /Assets/Settings/Mobile_RPAsset.asset.meta
+/ProjectSettings/GraphicsSettings.asset
+/ProjectSettings/ProjectSettings.asset
+/Assets/Settings/PC_RPAsset.asset
+/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset
