@@ -5,10 +5,11 @@ public class NPC : Interactable
     [SerializeField] private DialogueUI dialogueSys;
     [SerializeField] private DialogueObject convo;
     [SerializeField] private string item;
-    [SerializeField] private GameManager gameManager;
-    [SerializeField] private RPSgame rps;
+    //[SerializeField] private GameManager gameManager;
     private bool hasSpoken = false;
     //[SerializeField] private Animator anim;
+
+    public bool isRat=false;
 
 
     private void Update()
@@ -30,9 +31,11 @@ public class NPC : Interactable
         Debug.Log("Talking to the NPC!");
         if (!hasSpoken)
         {
+            if (isRat) dialogueSys.SetIsRat(true);
+
             dialogueSys.ShowDialogue(convo);
             hasSpoken = true;
-            gameManager.GrantItem(item);
+            //gameManager.GrantItem(item);
         }
         
     }

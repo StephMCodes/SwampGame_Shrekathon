@@ -10,6 +10,12 @@ public class RPSgame : MonoBehaviour
     public GameObject parentRootref;
     private static GameObject parentRoot;
 
+    public DialogueUI dialogueUI;
+    public DialogueObject winning1Dialogue;
+    public DialogueObject winning2Dialogue;
+    public DialogueObject winning3Dialogue;
+    public DialogueObject lossingDialogue;
+
     public void Update()
     {
 
@@ -88,19 +94,27 @@ public class RPSgame : MonoBehaviour
             ObjectiveManager.setObjectiveStatus(WORDENUM.Rat, true);
 
             //Dialogue Win : There's a first for everything, we'll help you when the time comes, Boss.
+            dialogueUI.ShowDialogue(lossingDialogue);
             EndGame();
         }
         else
         {
             Debug.Log("Computer wins!");
             //Dialogue Loss one : They call me the king for a reason
-            if(playerTries == 0) { }
+            if(playerTries == 0) {
+                dialogueUI.ShowDialogue(winning1Dialogue);
+            }
 
             //Dialogue Loss two : That's two, we could be here all day
-            if (playerTries == 1) { }
+            if (playerTries == 1) {
+                dialogueUI.ShowDialogue(winning2Dialogue);
+            }
 
             //Dialogue Lost three plus : Really? I'm not even cheating anymore!
-            if (playerTries >= 2) { }
+            if (playerTries >= 2) {
+                dialogueUI.ShowDialogue(winning3Dialogue);
+            }
+
         }
 
         playerTries++;

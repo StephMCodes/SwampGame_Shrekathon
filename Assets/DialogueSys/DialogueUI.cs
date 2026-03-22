@@ -25,6 +25,8 @@ public class DialogueUI : MonoBehaviour
 
     public static bool inDialogue;
 
+    private bool isRat = false;
+
 
     public bool IsOpen { get; private set; } //only dialogue ui can set true or false. other scripts have readonly access
 
@@ -48,6 +50,8 @@ public class DialogueUI : MonoBehaviour
         inDialogue = true;
         //method to make it appear on screen
         //ShowDialogue(testDialogue); //passing dialogue object
+
+        
 
 
         //test 1
@@ -160,6 +164,11 @@ public class DialogueUI : MonoBehaviour
         IsOpen = false;
         textLabel.text = string.Empty;
         PlayerObj.SetActive(true);
+
+        if (isRat) { RPSgame.StartGame();  }
+
     }
+
+    public void SetIsRat(bool state) { isRat = state; }
     
 }
