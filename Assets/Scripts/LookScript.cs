@@ -9,8 +9,11 @@ public class LookScript : MonoBehaviour
 
     void Update()
     {
-        var target = Camera.main.transform.position;
-        target.y = transform.position.y;
-        transform.LookAt(target);
+        if (Camera.main != null)
+        {
+            var target = Camera.main.transform.position;
+            target.y = transform.position.y;
+            transform.LookAt(target);
+        }
     }
 }

@@ -14,8 +14,7 @@ public class NPC : Interactable
         Debug.Log("Talking to the NPC!");
         if (!hasSpoken)
         {
-            if (isRat) dialogueSys.SetIsRat(true);
-
+            
             dialogueSys.ShowDialogue(convo);
             hasSpoken = true;
             //gameManager.GrantItem(item);
