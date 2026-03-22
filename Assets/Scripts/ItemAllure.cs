@@ -4,6 +4,7 @@ using System;
 public class ItemAllure : MonoBehaviour
 {
 
+    public Vector3 rotationDirection;
 
     public float rotateSpeed = 50f;
 
@@ -26,7 +27,7 @@ public class ItemAllure : MonoBehaviour
     void Update()
     {
         //Rotate around Y-Axus
-        transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
+        transform.Rotate(rotationDirection * rotateSpeed * Time.deltaTime);
 
         //Float up and down
         // Calculate the new Y position using a sine wave

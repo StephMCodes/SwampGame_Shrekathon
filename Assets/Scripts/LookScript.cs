@@ -7,9 +7,6 @@ public class LookScript : MonoBehaviour
 
     public float lookSpeed = 5.0f;
 
-    private float rotationX = 0.0f;
-    private float rotationY = 0.0f;
-
     void Update()
     {
         var target = Camera.main.transform.position;

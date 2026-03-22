@@ -7,8 +7,11 @@ public class PumpkinAI : MonoBehaviour
     public float speed = 5f;
     private Transform player;
     private NavMeshAgent agent;
-    private Animator animator;
+    [SerializeField] private Animator animator;
 
+    [SerializeField] AudioSource audio1;
+    [SerializeField] AudioSource audio2;
+    [SerializeField] AudioSource audio3;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -17,7 +20,11 @@ public class PumpkinAI : MonoBehaviour
         {
             agent.speed = speed;
         }
-        animator = GetComponentInChildren<Animator>();
+        //animator = GetComponentInChildren<Animator>();
+
+        audio1.volume = 0.1f;
+        audio2.volume = 0.1f;
+
     }
 
     void Update()
@@ -56,6 +63,7 @@ public class PumpkinAI : MonoBehaviour
         Debug.Log("Dieinmgggg");
 
         //Play death animation and sound effect here
+
         animator.SetBool("pumpdead", true);
         //Wait a few seconds and activate an InteractableItem (pumpkin corpse) so they can pick him up
 

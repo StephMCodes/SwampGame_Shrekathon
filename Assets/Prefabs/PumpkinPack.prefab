@@ -133,6 +133,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   fleeDistance: 5.75
   speed: 10
+  audio1: {fileID: 0}
+  audio2: {fileID: 0}
+  audio3: {fileID: 0}
 --- !u!195 &926959262007882898
 NavMeshAgent:
   m_ObjectHideFlags: 0
