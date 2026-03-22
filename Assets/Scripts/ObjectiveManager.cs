@@ -44,7 +44,16 @@ public class ObjectiveManager : MonoBehaviour
     }
 
     public static void incrementOnions() { 
+
+        
+
         OnionCount++;
+        //At 3 onions make idle wand hidle and active wand pickup visible
+
+        Debug.Log("Incrementing Onion Count to : " + OnionCount);
+
+        if (OnionCount >= 3) WandHandler.OnionCountMet();
+
     }
 
     public static int  getOnionCount()
