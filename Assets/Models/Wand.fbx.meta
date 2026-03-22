@@ -3,7 +3,17 @@ guid: bb566e8d2c3ac0942895ddb6080ac2ec
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Log.001
+    second: {fileID: 2100000, guid: 2857e362c55d79041beff0ab9dbc3b40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OnionTex
+    second: {fileID: 2100000, guid: fd23c4a1b556cb84d9e0f40963a8e67b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public static bool hasPumpkin = false;
 
     public static bool gameOver = false;
-    [SerializeField] GameObject endingCanvas;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +27,7 @@ public class GameManager : MonoBehaviour
             case "rats":
                 hasRats = true;
                 Debug.Log("Rats: " + hasRats);
+                ObjectiveManager.setObjectiveStatus(WORDENUM.Rat, true);
                 break;
             case "wand":
                 hasWand = true;
@@ -42,13 +42,12 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (gameOver)
-        {
-           endingCanvas.SetActive(true);
-           Cursor.visible = true;
-           Cursor.lockState = CursorLockMode.None;
-        }
-    }
+    //void Update()
+    //{
+    //    if (gameOver)
+    //    {
+    //       Cursor.visible = true;
+    //       Cursor.lockState = CursorLockMode.None;
+    //    }
+    //}
 }

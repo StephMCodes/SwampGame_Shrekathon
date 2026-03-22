@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class ObjectiveManager : MonoBehaviour
 {
+    [SerializeField] GameObject endingCanvas;
     // Tracks Objectives
     private static Dictionary<WORDENUM, bool> objectiveDict = new Dictionary<WORDENUM, bool>
     {
@@ -14,7 +15,6 @@ public class ObjectiveManager : MonoBehaviour
     };
 
     private static int OnionCount = 0;
-
 
     public static void setObjectiveStatus(WORDENUM objectiveName, bool value)
     {
