@@ -9,6 +9,7 @@ public class DialogueUI : MonoBehaviour
 
 
     [SerializeField] private GameObject PlayerObj;
+    [SerializeField] private TMP_Text Nametag;
     //Reference to text label.
     //The canvas should reference the text child component of dialogue box (drag and drop into textLabel)
     [SerializeField] private TMP_Text textLabel;
@@ -91,6 +92,8 @@ public class DialogueUI : MonoBehaviour
         //    yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
         //}
         //CloseDialogueBox();
+
+        Nametag.text = dialogueObject.nametag; //we pulled it out of the typewriter effect earlier
 
 
         //the foreach becomes a for loop because if there are options

@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   dialogue:
   - Hah! Told you I was unbeatable. Wanna try again?
+  nametag: Rat King
   responses: []
