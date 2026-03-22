@@ -37,6 +37,8 @@ public class PumpkinAI : MonoBehaviour
     {
         if (player != null && isDead == false)
         {
+            audio1.volume = 1;
+            audio2.volume = 1;
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
             // Check if the player is too close
@@ -58,7 +60,8 @@ public class PumpkinAI : MonoBehaviour
             else {
                 //If player is not close
                 animator.SetBool("playernear", false);
-
+                audio1.volume = 0f;
+                audio2.volume = 0f;
             }
         }
     }
@@ -66,9 +69,11 @@ public class PumpkinAI : MonoBehaviour
     public void Die()
     {
         isDead = true;
-
+        audio1.volume = 0f;
+        audio2.volume = 0f;
         // Play death animation and sound effect here
         animator.SetBool("pumpdead", true);
+        audio3.Play();
 
         // Show the shovel GameObject
         if (shovel != null)
