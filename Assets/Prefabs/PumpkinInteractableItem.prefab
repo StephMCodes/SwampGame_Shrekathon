@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4676422792828384775}
   - component: {fileID: 4239219415650102862}
   - component: {fileID: 5595612770734536918}
+  - component: {fileID: 6147190853968386071}
   m_Layer: 0
   m_Name: PumpkinInteractableItem
   m_TagString: Untagged
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableItem
   heldItem: 0
+  removeAfterInteraction: 1
 --- !u!54 &5595612770734536918
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,3 +156,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6147190853968386071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2462748738503078436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94d82682b77cb67489fefcb4d9ff3005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemAllure
+  rotateSpeed: 50
