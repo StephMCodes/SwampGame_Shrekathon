@@ -7,6 +7,9 @@ public class RPSgame : MonoBehaviour
     private int playerTries = 0;
     public RPShand leftHand;
     public RPShand rightHand;
+    public GameObject parentRoot;
+
+
 
     public void Update()
     {
@@ -22,23 +25,31 @@ public class RPSgame : MonoBehaviour
         }
     }
 
+    public void Start() 
+    { 
+        EndGame();
+    }
+
     [ContextMenu("Start Game")]
     public void StartGame() 
     {
+        parentRoot.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
+    [ContextMenu("End Game")]
     public void EndGame() 
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        parentRoot.SetActive(false);
     }
 
 
 
     //SO like this is the whole game, but if we want to cheat then...
-    public void PlayGame(WORDENUM playerChoice)
+    private void PlayGame(WORDENUM playerChoice)
     {
         WORDENUM[] choices = { WORDENUM.Rock, WORDENUM.Paper, WORDENUM.Scissors };
         WORDENUM computerChoice = choices[Random.Range(0, choices.Length)];
@@ -65,6 +76,11 @@ public class RPSgame : MonoBehaviour
 
         playerTries++;
     }
+
+    public void PlayRock() { PlayGame(WORDENUM.Rock); }
+    public void PlayPaper() { PlayGame(WORDENUM.Paper); }
+    public void PlayScissors() { PlayGame(WORDENUM.Scissors); }
+
 
 
 }

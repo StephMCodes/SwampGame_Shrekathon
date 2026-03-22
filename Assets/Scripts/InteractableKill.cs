@@ -11,7 +11,7 @@ public class InteractableKill : Interactable
     void Start() 
     {
         pumpkinAI = this.GetComponent<PumpkinAI>();
-        pumpkinAI.Die();
+       
     }
 
 
