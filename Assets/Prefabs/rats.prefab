@@ -377,7 +377,7 @@ MonoBehaviour:
   convo: {fileID: 11400000, guid: cc8bf9f06f907e24c8d02e3d294d5c16, type: 2}
   item: rats
   gameManager: {fileID: 0}
-  rps: {fileID: 0}
+  isRat: 0
 --- !u!54 &2044353127728712202
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -424,7 +424,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.12, y: 0.08017737, z: 0.09}
+  m_Size: {x: 0.12, y: 0.08017737, z: 0.21}
   m_Center: {x: -0.0237084, y: 0.005545824, z: 0.010369742}
 --- !u!1001 &5610615583571362485
 PrefabInstance:

@@ -7,52 +7,17 @@ ScriptedImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 'Cube/Mesh:000:'
-    second: {fileID: 2100000, guid: 344ea78651a6fc744a5e1c323ca0cb5b, type: 2}
+    second: {fileID: 2100000, guid: 7cb7042740d03224aacaebab0bbf6036, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Cube_001/Cube_001:000:'
-    second: {fileID: 2100000, guid: 344ea78651a6fc744a5e1c323ca0cb5b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 'Cube_002/Cube_005:000:'
-    second: {fileID: 2100000, guid: 344ea78651a6fc744a5e1c323ca0cb5b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 'Cube_003/Cube_006:000:'
-    second: {fileID: 2100000, guid: 344ea78651a6fc744a5e1c323ca0cb5b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 'Cube_004/Cube_007:000:'
-    second: {fileID: 2100000, guid: 344ea78651a6fc744a5e1c323ca0cb5b, type: 2}
+      name: 'Cube_005/Mesh_001:000:'
+    second: {fileID: 2100000, guid: d657391960c006844b83947ebf71cb77, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 'Cube_006/Cube_009:000:'
-    second: {fileID: 2100000, guid: 344ea78651a6fc744a5e1c323ca0cb5b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "PumpkinGEO_001/B\xE9zierCurve_002:000:"
-    second: {fileID: 2100000, guid: 344ea78651a6fc744a5e1c323ca0cb5b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 'Ratleft/Plane_001:000:'
-    second: {fileID: 2100000, guid: 344ea78651a6fc744a5e1c323ca0cb5b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 'Ratmiddle/Plane:000:'
-    second: {fileID: 2100000, guid: 344ea78651a6fc744a5e1c323ca0cb5b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 'Ratright/Plane_002:000:'
-    second: {fileID: 2100000, guid: 344ea78651a6fc744a5e1c323ca0cb5b, type: 2}
+    second: {fileID: 2100000, guid: d657391960c006844b83947ebf71cb77, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
