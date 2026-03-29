@@ -11,7 +11,9 @@ public class PumpkinAI : MonoBehaviour
 
     public GameObject shovel;
     public InteractableItem corpseModeScript;
+    public InteractableKill interactableKillScript;
     private bool isDead = false;
+    private bool isKillable = false;
 
     [SerializeField] AudioSource audio1;
     [SerializeField] AudioSource audio2;
@@ -22,6 +24,7 @@ public class PumpkinAI : MonoBehaviour
             shovel.SetActive(false);
         //if (corpseModeScript != null)
             corpseModeScript.enabled = false;
+            interactableKillScript.enabled = false;
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
@@ -33,20 +36,30 @@ public class PumpkinAI : MonoBehaviour
 
     }
 
+
     void Update()
     {
-        if (player != null && isDead == false)
+        //When the weapon is picked up, make it killable
+        if ((ObjectiveManager.getObjectiveStatus(WORDENUM.Weapon) == true) && (isKillable == false)) 
+        {
+            isKillable = true;
+            interactableKillScript.enabled = true;
+        }
+
+
+        //if dead, dont even bother
+        if ((player != null) && (isDead == false))
         {
             audio1.volume = 1;
             audio2.volume = 1;
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-            Debug.Log("Distance to player: " + distanceToPlayer);
+            //Debug.Log("Distance to player: " + distanceToPlayer);
 
-            Debug.Log("ObjectiveManager.getObjectiveStatus(WORDENUM.Weapon) to player: " + ObjectiveManager.getObjectiveStatus(WORDENUM.Weapon));
+            //Debug.Log("ObjectiveManager.getObjectiveStatus(WORDENUM.Weapon) to player: " + ObjectiveManager.getObjectiveStatus(WORDENUM.Weapon));
 
             // Check if the player is too close
-            if (distanceToPlayer < fleeDistance && ObjectiveManager.getObjectiveStatus(WORDENUM.Weapon))
+            if ((distanceToPlayer < fleeDistance) && ObjectiveManager.getObjectiveStatus(WORDENUM.Weapon))
             {
                 animator.SetBool("playernear", true);
 
@@ -80,12 +93,16 @@ public class PumpkinAI : MonoBehaviour
         audio3.Play();
 
         // Show the shovel GameObject
-        if (shovel != null)
-            shovel.SetActive(true);
+        shovel.SetActive(true);
 
         // Enable the InteractableItem script (corpse mode)
-        if (corpseModeScript != null)
-            corpseModeScript.enabled = true;
+        corpseModeScript.enabled = true;
+        interactableKillScript.enabled = false;
+
+        UIforInterablesController.SetInteractableLMBActive(false);
+
+
+
     }
 
 

@@ -2,17 +2,13 @@ using UnityEngine;
 
 public class UIHandler : MonoBehaviour
 {
-    //UI for pop up Press E to interact
-    public GameObject UIPressEPublic;
-    private static GameObject UIPressE;
+
 
     public GameObject axeHoldablePrefab;
     static private AxeHandler axeHandler;
 
     void Start()
     {
-        UIPressE = UIPressEPublic;
-        UIPressE.SetActive(false);
 
         axeHandler = axeHoldablePrefab.GetComponent<AxeHandler>();
 
@@ -31,13 +27,10 @@ public class UIHandler : MonoBehaviour
 
 
 
-
+    //I dont think this function is called anymore
     public static void SetUIPressE(bool isActive)
     {
-        if (UIPressE != null)
-        {
-            UIPressE.SetActive(isActive);
-        }
+            UIforInterablesController.SetInteractableEActive(isActive);   
     }
 
     //Update objective counters

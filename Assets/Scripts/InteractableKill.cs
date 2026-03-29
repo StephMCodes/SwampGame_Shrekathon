@@ -27,7 +27,10 @@ public class InteractableKill : Interactable
         //Call UI to remove axe
         UIHandler.DisplayAxe(false);
 
-        
+        UIforInterablesController.SetInteractableLMBActive(false);
+
+
+
     }
 
 

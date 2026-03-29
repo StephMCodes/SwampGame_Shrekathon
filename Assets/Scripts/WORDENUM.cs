@@ -10,4 +10,7 @@ public enum WORDENUM
     Rock,
     Paper,
     Scissors,
+    EToInteract,
+    LmbToInteract,
+    None
 }

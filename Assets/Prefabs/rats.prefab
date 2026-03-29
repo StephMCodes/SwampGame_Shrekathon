@@ -373,10 +373,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47aa871a1a1fd947b5d326a19ac326d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
+  interactionButton: 8
   dialogueSys: {fileID: 0}
   convo: {fileID: 11400000, guid: cc8bf9f06f907e24c8d02e3d294d5c16, type: 2}
   item: rats
   gameManager: {fileID: 0}
+  animationString: 
   isRat: 0
 --- !u!54 &2044353127728712202
 Rigidbody:

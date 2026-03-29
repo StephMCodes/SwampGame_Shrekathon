@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1d75a2899c9bb4baec5b7e6e57fc66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableItem
+  interactionButton: 8
   heldItem: 4
   removeAfterInteraction: 1
 --- !u!54 &6110471358070880582

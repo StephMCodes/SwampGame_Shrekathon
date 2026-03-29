@@ -43,7 +43,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 02071e7a3f3ea9948bab81e7723bcda9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -172,7 +172,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 33708da3bc69c4d4681eafbc60d294a0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -325,7 +325,7 @@ Transform:
   m_GameObject: {fileID: 4707835025415140128}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.89, y: 2.12, z: -1.12}
+  m_LocalPosition: {x: -6.18, y: 2.14, z: -2.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -432,9 +432,10 @@ MonoBehaviour:
   animator: {fileID: 3842448308876771016}
   shovel: {fileID: 2151374658207039279}
   corpseModeScript: {fileID: 374911832129209228}
+  interactableKillScript: {fileID: 346704326267125897}
   audio1: {fileID: 1822722155323922445}
   audio2: {fileID: 1827933735374208144}
-  audio3: {fileID: 1441339652109024542}
+  audio3: {fileID: 3390809853237525624}
 --- !u!195 &926959262007882898
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -464,11 +465,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4707835025415140128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb3c432caf9987443a0b1e78549a51bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableKill
+  interactionButton: 9
 --- !u!54 &2951886376575510929
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -702,6 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1d75a2899c9bb4baec5b7e6e57fc66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableItem
+  interactionButton: 8
   heldItem: 0
   removeAfterInteraction: 1
 --- !u!1 &6188094845276551910
@@ -766,7 +769,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: e8e84cf70be096f41a42a346c3d48bc4, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 6b36a112c67c04940ada6024c1e58b3c, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &8451824499750839756
 GameObject:
