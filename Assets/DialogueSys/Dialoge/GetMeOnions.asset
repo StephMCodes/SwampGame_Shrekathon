@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: GetMeOnions
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   dialogue:
-  - Huh? You want this? I guess one man's trash is another man's treasure...
+  - Huh? You want this onion wand? I guess one man's trash is another man's treasure...
   - Well, it's my treasure! You think things are free here?
-  - I don't want your money! Get me three onions and then we can talk.
+  - I don't want your money! Get me THREE onions and then we can talk.
   nametag: Puss in Boot
   responses: []
