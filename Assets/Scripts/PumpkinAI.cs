@@ -18,9 +18,9 @@ public class PumpkinAI : MonoBehaviour
     [SerializeField] AudioSource audio3;
     void Start()
     {
-        if (shovel != null)
+        //if (shovel != null)
             shovel.SetActive(false);
-        if (corpseModeScript != null)
+        //if (corpseModeScript != null)
             corpseModeScript.enabled = false;
 
         player = GameObject.FindGameObjectWithTag("Player").transform;

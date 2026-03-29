@@ -23,11 +23,16 @@ public class DialogueUI : MonoBehaviour
     //while dialogue is running, block mouse events
     [SerializeField] private GameObject EventSystem;
 
+    //while dialogue is running, block mouse events
+    private string animationString = null;
+    private Animator animator = null;
+
     public static bool inDialogue;
 
     private bool isRat = false;
 
 
+    public void setAnimationStringAndAnimator(string ani, Animator ani2) { animationString = ani; animator = ani2; }
     public bool IsOpen { get; private set; } //only dialogue ui can set true or false. other scripts have readonly access
 
     private TypewriterEffect typewriterEffect;
@@ -50,27 +55,19 @@ public class DialogueUI : MonoBehaviour
         inDialogue = true;
         //method to make it appear on screen
         //ShowDialogue(testDialogue); //passing dialogue object
-
-        
-
-
-        //test 1
-        //textLabel.text = "Hello!\nThis is my second line.";
-
-        //test 2
-        //GetComponent<TypewriterEffect>().Run("Hello again!\nThis is my second line.", textLabel);
     }
 
-    private void Update()
-    {
-        //Debug.Log(inDialogue);
-
-    }
 
     public void ShowDialogue(DialogueObject dialogueObject)
     {
         //show box
         dialogueBox.SetActive(true);
+        
+        //if has animation, trigger it
+        if(animationString != null && animator != null)
+        {
+            animator.SetBool(animationString, true);
+        }
 
         //turn off player
         PlayerObj.gameObject.SetActive(false);
@@ -171,6 +168,11 @@ public class DialogueUI : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
+        }
+        //if has animation, trigger it
+        if (animationString != null && animator != null)
+        {
+            animator.SetBool(animationString, false);
         }
 
     }

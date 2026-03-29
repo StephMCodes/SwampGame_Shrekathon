@@ -17,8 +17,11 @@ public class InteractableKill : Interactable
 
     public override void Interact()
     {
-        Debug.Log("Interacted with Kill");
-
+        if(ObjectiveManager.getObjectiveStatus(WORDENUM.Weapon) == false)
+        {
+            Debug.Log("You need a weapon to kill the pumpkin!");
+            return;
+        }
         //Run death function in pumpkin
         pumpkinAI.Die();
         //Call UI to remove axe
