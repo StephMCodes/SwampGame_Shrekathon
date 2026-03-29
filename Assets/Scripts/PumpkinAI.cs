@@ -5,7 +5,7 @@ public class PumpkinAI : MonoBehaviour
 {
     public float fleeDistance = 10f; // Distance at which the AI starts fleeing
     public float speed = 5f;
-    private Transform player;
+    public Transform playerTransform;
     private NavMeshAgent agent;
     [SerializeField] private Animator animator;
 
@@ -26,7 +26,6 @@ public class PumpkinAI : MonoBehaviour
             corpseModeScript.enabled = false;
             interactableKillScript.enabled = false;
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         if (agent != null)
         {
@@ -48,11 +47,11 @@ public class PumpkinAI : MonoBehaviour
 
 
         //if dead, dont even bother
-        if ((player != null) && (isDead == false))
+        if ((playerTransform != null) && (isDead == false))
         {
             audio1.volume = 1;
             audio2.volume = 1;
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
 
             //Debug.Log("Distance to player: " + distanceToPlayer);
 
@@ -64,7 +63,7 @@ public class PumpkinAI : MonoBehaviour
                 animator.SetBool("playernear", true);
 
                 // Calculate the direction away from the player
-                Vector3 runDirection = transform.position - player.position;
+                Vector3 runDirection = transform.position - playerTransform.position;
                 // Normalize the direction and extend it to find a potential destination point
                 Vector3 destinationPoint = transform.position + runDirection.normalized * fleeDistance;
 

@@ -16,6 +16,10 @@ public class ObjectiveUIListHandler : MonoBehaviour
         rat = ratPub;
         wand = wandPub;
 
+        //Start game with no cursor
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
     }
 
 

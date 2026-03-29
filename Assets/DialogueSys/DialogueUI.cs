@@ -132,7 +132,8 @@ public class DialogueUI : MonoBehaviour
             //allow mouse inputs again
             EventSystem.SetActive(true);
             inDialogue = false;
-           // Cursor.lockState = CursorLockMode.Locked;
+
+
         }
 
     }
@@ -157,16 +158,23 @@ public class DialogueUI : MonoBehaviour
     //closing the dialogue box
     public void CloseDialogueBox()
     {
+        //Stop Mouse
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         dialogueBox.SetActive(false);
         IsOpen = false;
         textLabel.text = string.Empty;
         PlayerObj.SetActive(true);
 
-        if (isRat) { 
-            RPSgame.StartGame();
+        //If it is a rat and we havent completed rat yet, start RPS
+        //After the game, we want the dialogue to close the cursor so this should not be run
+        if (isRat && (ObjectiveManager.getObjectiveStatus(WORDENUM.Rat)==false)) { 
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+
+            RPSgame.StartGame();
 
         }
         //if has animation, trigger it

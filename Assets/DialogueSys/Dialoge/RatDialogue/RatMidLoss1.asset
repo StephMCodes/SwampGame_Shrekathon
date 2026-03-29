@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: RatMidLoss1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   dialogue:
-  - Welp, there's a first for everything.
+  - Haha, can't beat the king! You put up a good challenge, so we'll help you out.
   nametag: Rat King
   responses: []
