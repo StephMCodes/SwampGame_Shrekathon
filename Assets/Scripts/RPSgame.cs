@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 
@@ -90,64 +91,77 @@ public class RPSgame : MonoBehaviour
     private void PlayGame(WORDENUM playerChoice)
     {
 
+        //Only play if both hands are not mid animation, otherwise ignore input
+        if ((!leftHand.GetMidAnimation() || !rightHand.GetMidAnimation()) && !leftHand.GetStopInput()) { 
 
-        if (!leftHand.GetMidANimation() || !rightHand.GetMidANimation()) { }
+            WORDENUM[] choices = { WORDENUM.Rock, WORDENUM.Paper, WORDENUM.Scissors };
+            WORDENUM computerChoice = choices[Random.Range(0, choices.Length)];
 
-        WORDENUM[] choices = { WORDENUM.Rock, WORDENUM.Paper, WORDENUM.Scissors };
-        WORDENUM computerChoice = choices[Random.Range(0, choices.Length)];
+            Debug.Log("?");
 
-        Debug.Log("?");
-
-        //Cheat for the first two not in favor of player
-        if(playerTries < 2)
-        {
-            if (playerChoice == WORDENUM.Rock) computerChoice = WORDENUM.Paper;
-            else if (playerChoice == WORDENUM.Paper) computerChoice = WORDENUM.Scissors;
-            else if (playerChoice == WORDENUM.Scissors) computerChoice = WORDENUM.Rock;
-        }
-
-        leftHand.Play(playerChoice, true);
-        rightHand.Play(computerChoice, false);
-
-        Debug.Log("Player choice: " + playerChoice);
-        Debug.Log("Computer choice: " + computerChoice);
-        if (playerChoice == computerChoice)
-        {
-            Debug.Log("It's a tie!");
-        }
-        else if ((playerChoice == WORDENUM.Rock && computerChoice == WORDENUM.Scissors) ||
-                 (playerChoice == WORDENUM.Paper && computerChoice == WORDENUM.Rock) ||
-                 (playerChoice == WORDENUM.Scissors && computerChoice == WORDENUM.Paper))
-        {
-            Debug.Log("Player wins!");
-            ObjectiveManager.setObjectiveStatus(WORDENUM.Rat, true);
-
-            //Dialogue Win : There's a first for everything, we'll help you when the time comes, Boss.
-            dialogueUI.ShowDialogue(lossingDialogue);
-            EndGame();
-        }
-        else
-        {
-            Debug.Log("Computer wins!");
-            //Dialogue Loss one : They call me the king for a reason
-            if(playerTries == 0) {
-      //          dialogueUI.ShowDialogue(winning1Dialogue);
+            //Cheat for the first two not in favor of player
+            if(playerTries < 2)
+            {
+                if (playerChoice == WORDENUM.Rock) computerChoice = WORDENUM.Paper;
+                else if (playerChoice == WORDENUM.Paper) computerChoice = WORDENUM.Scissors;
+                else if (playerChoice == WORDENUM.Scissors) computerChoice = WORDENUM.Rock;
             }
 
-            //Dialogue Loss two : That's two, we could be here all day
-            if (playerTries == 1) {
-        //        dialogueUI.ShowDialogue(winning2Dialogue);
+            leftHand.Play(playerChoice, true);
+            rightHand.Play(computerChoice, false);
+
+            Debug.Log("Player choice: " + playerChoice);
+            Debug.Log("Computer choice: " + computerChoice);
+            if (playerChoice == computerChoice)
+            {
+                Debug.Log("It's a tie!");
+            }
+            else if ((playerChoice == WORDENUM.Rock && computerChoice == WORDENUM.Scissors) ||
+                     (playerChoice == WORDENUM.Paper && computerChoice == WORDENUM.Rock) ||
+                     (playerChoice == WORDENUM.Scissors && computerChoice == WORDENUM.Paper))
+            {
+                Debug.Log("Player wins!");
+                ObjectiveManager.setObjectiveStatus(WORDENUM.Rat, true);
+
+                leftHand.SetStopInput(true);
+                rightHand.SetStopInput(true);
+
+                //Wait three seconds to let animation play
+                StartCoroutine(EndGameAfterDelay(3f));
+
+
+            }
+            else
+            {
+                Debug.Log("Computer wins!");
+                //Dialogue Loss one : They call me the king for a reason
+                if(playerTries == 0) {
+          //          dialogueUI.ShowDialogue(winning1Dialogue);
+                }
+
+                //Dialogue Loss two : That's two, we could be here all day
+                if (playerTries == 1) {
+            //        dialogueUI.ShowDialogue(winning2Dialogue);
+                }
+
+                //Dialogue Lost three plus : Really? I'm not even cheating anymore!
+                if (playerTries >= 2) {
+            //        dialogueUI.ShowDialogue(winning3Dialogue);
+                }
+
             }
 
-            //Dialogue Lost three plus : Really? I'm not even cheating anymore!
-            if (playerTries >= 2) {
-        //        dialogueUI.ShowDialogue(winning3Dialogue);
-            }
-
+            playerTries++;
         }
-
-        playerTries++;
     }
+
+    private IEnumerator EndGameAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        EndGame();
+        dialogueUI.ShowDialogue(lossingDialogue);
+    }
+
 
     public void PlayRock() { PlayGame(WORDENUM.Rock); }
     public void PlayPaper() { PlayGame(WORDENUM.Paper); }

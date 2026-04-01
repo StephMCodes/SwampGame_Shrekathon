@@ -10,10 +10,11 @@ public class RPShand : MonoBehaviour
     public Sprite scissorsSprite;
 
     private bool midAnimation = false;
+    private bool stopInput = false;
 
     void Start()
     {
-        midAnimation = false;
+        SetMidAnimation(false);
         // Use GetComponent instead of GetComponentInChildren if the SpriteRenderer is on the same GameObject
         currentImage = GetComponent<Image>();
         if (currentImage == null)
@@ -29,8 +30,10 @@ public class RPShand : MonoBehaviour
 
     public void Play(WORDENUM choice, bool isLeftHand) 
     {
-        //Animate hand then switch sprite to the correct one, then animate hand again to show the new sprite
-        StartCoroutine(AnimateHand(choice, isLeftHand));
+        if (!stopInput) { 
+            //Animate hand then switch sprite to the correct one, then animate hand again to show the new sprite
+            StartCoroutine(AnimateHand(choice, isLeftHand));
+        }
 
     }
 
@@ -84,6 +87,10 @@ public class RPShand : MonoBehaviour
     }
 
     public void SetMidAnimation(bool state) { midAnimation = state; }
-    public bool GetMidANimation() { return midAnimation;  }
+    public bool GetMidAnimation() { return midAnimation;  }
+
+    public void SetStopInput(bool state) { stopInput = state; }
+
+    public bool GetStopInput() { return stopInput; }
 
 }
